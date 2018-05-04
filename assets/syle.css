@@ -1,0 +1,15 @@
+.row1 {
+    background-image: url("field.jpg");
+    background-attachment: fixed;
+    background-image: repeat;
+    background-size: cover
+}
+
+.card1{
+    background-color: rgba(255, 255, 255, 0.1)
+    
+}
+
+.searchbar{
+    display: inline-grid
+}
