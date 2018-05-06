@@ -16,8 +16,10 @@
   <section class="container-fluid row1">
     <div class="row">
       <div class="col align-center">
-        <input atype="text" class="form-control" name="player" placeholder="Name, Team, Position">
-        <button type="submit" class="btn btn-primary" id="get-player-button">Get Player</button>
+        <form class = "form" onsubmit="app.controllers.footballController.search(event)">
+        <input type="text" class="form-control" name="query" placeholder="Player Name, Team, Position">
+        <button type="submit" class="btn btn-primary" id="get-player-button">Search</button>
+        </form>
       </div>
     </div>
       <div class="row">

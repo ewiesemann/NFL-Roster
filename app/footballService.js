@@ -4,6 +4,15 @@ function FootballService(callback){
    
     //...
    //...
+
+    this.search = function search(query){
+      var x = query.toLowerCase()
+      var filteredResults = playersData.filter(function (player) {
+          return player.fullname.toLowerCase().includes(x) || player.pro_team.toLowerCase().includes(x) || player.position.toLowerCase().includes(x)
+      })
+      return filteredResults
+    }
+
      function loadPlayersData(){
        //check if the player already has a copy of the NFL playersData
        var localData = localStorage.getItem('playersData');
@@ -33,14 +42,19 @@ function FootballService(callback){
         //Search filter example - needs modified
         this.getPlayersByTeam = function(teamName){
             return playersData.filter(function(player){
-              if(player.team == teamName){
+              if(player.pro_team == teamName){
                 return true;
               }
             });
           }
 
+          //return an array of all players who match the given position.
           this.getPlayersByPosition = function(position){
-            //return an array of all players who match the given position.
+            return playersData.filter(function(player){
+              if (player.position == position){
+                return true;
+              }
+            })
           };
 
        this.addToMyTeam = function addToMyTeam(playerId, cb){

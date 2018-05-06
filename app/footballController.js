@@ -4,6 +4,15 @@ function FootballController(){
 
 var footballService = new FootballService(drawRoster);
 
+
+this.search = function search(e){
+    e.preventDefault()
+    var query = e.target.query.value
+    var results = footballService.search(query)
+    drawRoster(results)
+    };
+
+
 function drawRoster (players){
     var template = "<h1>Player Roster</h1>";
         for (let i = 0; i < players.length; i++) {
