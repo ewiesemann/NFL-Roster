@@ -29,13 +29,14 @@
       </div>
           
       <div class="col-4">
-          <form class = "form-inline align-center" onsubmit="app.controllers.footballController.search(event)">
+          <form class = "form" onsubmit="app.controllers.footballController.search(event)">
           <input type="text" class="form-control" name="query" placeholder="Name, Team, Position">
-          <button type="submit" class="btn btn-secondary btn-lg" id="get-player-button">Search</button>
+          <button type="submit" class="btn btn-secondary" id="get-player-button">Search</button>
             </form>
-
-            <p>Search for players by Name, Position, or Team</p>
-            <p>Add and remove players from your team to create your own fantasy roster</p>
+            <h3>RULES</h3>
+            <p>You may only add a player once.</p>
+            <p>You may only add a position once.</p>
+            <p>Team size is limited to 11 players.</p>
       </div>
 
       <div class="col-4" id="myTeam">
