@@ -4,7 +4,7 @@ function FootballController(){
 
 var footballService = new FootballService(drawRoster);
 
-
+//Search feature for finding specific data
 this.search = function search(e){
     e.preventDefault()
     var query = e.target.query.value
@@ -13,6 +13,7 @@ this.search = function search(e){
     };
 
 
+//Adds the player information to the card to be displayed
 function drawRoster (players){
     var template = "<h1>Player Roster</h1>";
         for (let i = 0; i < players.length; i++) {
@@ -33,6 +34,8 @@ function drawRoster (players){
     document.getElementById("playerRoster").innerHTML = template;
 }
 
+
+//Adds the player informaiton to the My Team card to be displayed
     function drawMyTeam(players){
         var template = "<h1>My Team</h1>";
     for (var i = 0; i < players.length; i++) {
@@ -63,4 +66,21 @@ function drawRoster (players){
     footballService.removeFromTeam(id, drawMyTeam)
   };
 
+  window.onscroll = function() {scrollFunction()};
+
 }
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    }
+

@@ -5,6 +5,10 @@
     background-size: cover
 }
 
+h1{
+    color: white
+}
+
 .card1{
     background-color: rgba(255, 255, 255, 0.1)
     
@@ -12,4 +16,24 @@
 
 .searchbar{
     display: inline-grid
+}
+
+#myBtn {
+    display: none; 
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#myBtn:hover {
+    background-color: #555;
 }

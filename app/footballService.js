@@ -39,6 +39,8 @@ function FootballService(callback){
             });   
         }
 
+      
+
         //Search filter example - needs modified
         this.getPlayersByTeam = function(teamName){
             return playersData.filter(function(player){
@@ -57,24 +59,29 @@ function FootballService(callback){
             })
           };
 
-       this.addToMyTeam = function addToMyTeam(playerId, cb){
-            return playersData.filter(function (player){
-                if (player.id == playerId){
-                    myTeam.push(player)
-                   return cb(myTeam);
-                }
-          });
-        }
+//This addes a player to My Team          
+  this.addToMyTeam = function addToMyTeam(playerId, cb){
+    return playersData.filter(function (player){
+      if (player.id == playerId){
+        myTeam.push(player)
+      return cb(myTeam);
+          }
+        });
+      
+    }
 
-    
 
 
+//This removes a selected player from My Team
   this.removeFromTeam = function removeFromTeam(removeId, draw) {
 
     // This is for removing characters from myTeam
     var removeMember = myTeam.find(function(char){
       return char.id == removeId
-    })
+    });
+
+
+  
 
     //indexOf itterates over an array to find the element it was passed and returns the index, if it doesnt find it it will return -1
     var index = myTeam.indexOf(removeMember)
