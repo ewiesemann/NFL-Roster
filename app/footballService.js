@@ -22,7 +22,7 @@ function FootballService(callback){
            //return will short-circuit the loadPlayersData function
            //this will prevent the code below from ever executing
            console.log(playersData)
-           return callback(playersData)
+           //return callback(playersData)
        }
        //if not go get that data
        var url = "https://bcw-getter.herokuapp.com/?url=";
@@ -35,7 +35,7 @@ function FootballService(callback){
            console.log('Writing Player Data to localStorage')
            localStorage.setItem('playersData', JSON.stringify(playersData))
            console.log('Finished Writing Player Data to localStorage')
-           callback(playersData)
+           //callback(playersData)
             });   
         }
 

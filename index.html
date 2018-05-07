@@ -11,20 +11,30 @@
   <title>NFL Team Roster</title>
 </head>
 
-<body>
-
-  <section class="container-fluid row1">
+<body class = "row1 text-center text-light" >
+  
+  <section class="container row1">
+    <div class="row">
+    <div class="col bg1
+    ">
+  
+          <h1>Fantasy Football Team</h1>
+          </div>
+      </div>
 
     <div class="row">
+    
       <div class="col-4" id="playerRoster">
         
       </div>
           
       <div class="col-4">
-          <form class = "form-inline" onsubmit="app.controllers.footballController.search(event)">
+          <form class = "form-inline align-center" onsubmit="app.controllers.footballController.search(event)">
           <input type="text" class="form-control" name="query" placeholder="Player Name, Team, Position">
-          <button type="submit" class="btn btn-primary" id="get-player-button">Search</button>
+          <button type="submit" class="btn btn-secondary btn-lg" id="get-player-button">Search</button>
             </form>
+
+            <p>Search for players by Name, Position, or team</p>
       </div>
 
       <div class="col-4" id="myTeam">

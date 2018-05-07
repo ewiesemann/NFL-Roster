@@ -2,7 +2,8 @@ function FootballController(){
 
 //PRIVATE
 
-var footballService = new FootballService(drawRoster);
+var footballService = new FootballService()
+
 
 //Search feature for finding specific data
 this.search = function search(e){
@@ -15,11 +16,11 @@ this.search = function search(e){
 
 //Adds the player information to the card to be displayed
 function drawRoster (players){
-    var template = "<h1>Player Roster</h1>";
+    var template = "<h1>NFL Player Roster</h1>";
         for (let i = 0; i < players.length; i++) {
             var player = players[i];
             template +=`
-            <div class= "card card1 align-items-center" style = "width: 20rem">
+            <div class= "card card1 align-items-center text-dark" style = "width: 20rem">
                 <img class="playerPic" src="${player.photo}" alt="">
                 <h3>Name: ${player.fullname}</h3>
                 <p>Position: ${player.position}</p>
@@ -37,11 +38,11 @@ function drawRoster (players){
 
 //Adds the player informaiton to the My Team card to be displayed
     function drawMyTeam(players){
-        var template = "<h1>My Team</h1>";
+        var template = "<h1>My Fantasy Team</h1>";
     for (var i = 0; i < players.length; i++) {
       var player = players[i];
       template += `
-    <div class="card card1 align-items-center" style = "width:20rem">
+    <div class="card card1 align-items-center text-dark" style = "width:20rem">
     <img class="playerPic" src="${player.photo}" alt="">
         <h3>Name: ${player.fullname}</h3>
         <p>Position: ${player.position}</p>
